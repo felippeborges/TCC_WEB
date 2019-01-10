@@ -3,9 +3,12 @@
 header('Content-Type: text/html; charset=UTF-8');
 error_reporting(E_ALL ^ E_NOTICE);
 
+$_POST["usu_usuario"] = "teste";
+$_POST["usu_senha"] = "123";
+
 if (isset($_POST["usu_usuario"]) && isset($_POST["usu_senha"])) { //Verifica se o ANDROID enviou os parametros para poder realizar a validação do usuario.
 
-    require_once '../../include/auto_load_path_1.php';
+    require_once '../../include/auto_load_path_2.php';
 
     $usuario = new UsuarioInstance();
     $usuarioBean = new UsuarioBean();
@@ -19,6 +22,7 @@ if (isset($_POST["usu_usuario"]) && isset($_POST["usu_senha"])) { //Verifica se 
         $user["usu_desconto"] = $usuarioBean->getUsu_desconto();
         $user["usu_usuario"] = $usuarioBean->getUsu_usuario();
         $user["usu_senha"] = $usuarioBean->getUsu_senha();
+        
         array_push($resposta["usuario_array"], $user);
         $resposta ["sucesso"] = 1;
         $resposta ["mensagem"] = "dados retornados com sucesso";
