@@ -3,9 +3,9 @@
 header('Content-Type: text/html; charset=UTF-8');
 error_reporting(E_ALL ^ E_NOTICE);
 
-if (isset($_POST["usu_usuario"]) && isset($_POST["usu_senha"])) {
+if (isset($_POST["usu_usuario"]) && isset($_POST["usu_senha"])) { //Verifica se o ANDROID enviou os parametros para poder realizar a validação do usuario.
 
-    require_once '../../include/auto_load_path_2.php';
+    require_once '../../include/auto_load_path_1.php';
 
     $usuario = new UsuarioInstance();
     $usuarioBean = new UsuarioBean();
