@@ -11,6 +11,7 @@
 
     <!-- Bootstrap core CSS -->
     <?php 
+    include_once './view/config.php';
  include_once './view/obter_css.php';
  ?> 
 
