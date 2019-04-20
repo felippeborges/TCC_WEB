@@ -24,6 +24,7 @@ class UsuarioInstance {
         $usuario->setUsu_comissao($_POST["usu_comissao"]);
         $usuario->setUsu_usuario($_POST["usu_usuario"]);
         $usuario->setUsu_senha($_POST["usu_senha"]);
+
         //$usuario->setUsu_nivel("USER");
         return UsuarioDao::getInstance()->m_gravar_usuario($usuario);
   
@@ -31,6 +32,14 @@ class UsuarioInstance {
 
     public function c_buscar_todos_os_usuarios() {
         return UsuarioDao::getInstance()->m_buscar_todos_usuarios();
+
+        $usuario->setUsu_nivel("USER");
+        return UsuarioDao::getInstance()->m_gravar_usuario($usuario);
+    }
+
+    public function c_buscar_todos_os_usuarios() {
+        return UsuarioDao::getInstance()->m_buscar_todos_os_usuarios();
+
     }
 
     public function c_buscar_usuario_por_codigo($usu_codigo) {
